@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke Lenhart | History & milestones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Inter:wght@300;400;600&display=swap');
+
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f172a;
+                --text-main: #f8fafc;
+                --text-muted: #94a3b8;
+                --accent: #60a5fa;
+                --border: #334155;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background-color 0.3s ease;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -1px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--border);
+        }
+
+        .active-dot {
+            position: absolute;
+            left: -5px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            border: 2px solid var(--bg-color);
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s ease-out, opacity 0.2s ease;
+            opacity: 0;
+        }
+
+        .timeline-item.expanded .content-wrapper {
+            grid-template-rows: 1fr;
+            opacity: 1;
+            margin-top: 0.5rem;
+        }
+
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item.expanded .chevron {
+            transform: rotate(180deg);
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        section {
+            scroll-margin-top: 5rem;
+        }
+
+        .photo-frame {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        .photo-frame:hover {
+            filter: grayscale(0%);
+            transform: scale(1.01);
+        }
+
+        @media print {
+            .no-print { display: none; }
+            body { background: white; color: black; }
+            .container { max-width: 100%; }
+            .content-wrapper { grid-template-rows: 1fr; opacity: 1; }
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-opacity-80 backdrop-blur-md border-b border-[var(--border)] bg-[var(--bg-color)] no-print">
+        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="mono font-bold tracking-tighter text-lg uppercase">LUKE LENHART</span>
+            <div class="space-x-6 text-sm mono font-medium">
+                <a href="#history">History</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 pt-32 pb-24">
+        
+        <!-- Header / Intro -->
+        <header id="about" class="mb-20">
+            <h1 class="text-4xl font-bold mb-6 tracking-tight sm:text-5xl">
+                Creating <span class="text-blue-500">growth</span> through excellence in <span class="text-blue-500">operations</span>, and <span class="text-blue-500">strategy</span>.
+            </h1>
+            <p class="text-lg text-[var(--text-muted)] max-w-2xl">
+                I thrive on transforming complex organizations into productive operations. With a background in supply chain management, and operations excellence, I create actionable solutions that drive tangible results.
+            </p>
+        </header>
+
+        <!-- Timeline Section -->
+        <section id="history" class="mb-24">
+            <h2 class="mono text-xs uppercase tracking-[0.2em] text-[var(--text-muted)] mb-12 border-b border-[var(--border)] pb-2 flex justify-between items-end">
+                Chronological Record
+                <span class="text-[10px] font-normal italic">Click items to expand</span>
+            </h2>
+
+            <div class="space-y-8">
+                <!-- Fragile -->
+                <div class="relative pl-8 timeline-item expanded group cursor-pointer" onclick="toggleItem(this)">
+                    <div class="active-dot"></div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="mono text-sm text-blue-500 font-semibold uppercase block">July 2025 — Present</span>
+                            <h3 class="text-xl font-bold group-hover:text-blue-500 transition-colors">Head of Operations at Whim</h3>
+                        </div>
+                        <svg class="chevron w-5 h-5 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    
+                    <div class="content-wrapper overflow-hidden">
+                        <div class="min-h-0 pt-2 pb-4">
+                            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                                <div class="md:col-span-3">
+                                    <p class="text-[var(--text-muted)]">
+                                        Revolutionizing reverse logistics into incremental merchant growth through device returns and re-circulation. Leading teams across operations, supply chain, and customer experience to create operational excellence.
+                                </div>
+                                <div class="md:col-span-2">
+                                    <div class="aspect-video bg-[var(--border)] rounded-lg overflow-hidden photo-frame border border-[var(--border)]">
+                                        <img src="assets/whimSnapshot.png" alt="Whim program" class="object-cover w-full h-full">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kearney -->
+                <div class="relative pl-8 timeline-item group cursor-pointer" onclick="toggleItem(this)">
+                    <div class="active-dot"></div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="mono text-sm text-[var(--text-muted)] font-semibold uppercase block">Oct 2022 — July 2025</span>
+                            <h3 class="text-xl font-bold group-hover:text-blue-500 transition-colors">Associate at Kearney</h3>
+                        </div>
+                        <svg class="chevron w-5 h-5 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    
+                    <div class="content-wrapper overflow-hidden">
+                        <div class="min-h-0 pt-2 pb-4">
+                            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                                <div class="md:col-span-3">
+                                    <p class="text-[var(--text-muted)]">
+                                        Created over $250M in run rate savings through new supply chains, operational improvements, and labor efficiencies for clients across manufacturing and hospitality sectors.
+                                    </p>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <div class="aspect-video bg-[var(--border)] rounded-lg overflow-hidden photo-frame border border-[var(--border)]">
+                                        <img src="assets/ATK.jpg" alt="ATK team" class="object-cover w-full h-full">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Bay Club Company -->
+                <div class="relative pl-8 timeline-item group cursor-pointer" onclick="toggleItem(this)">
+                    <div class="active-dot"></div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="mono text-sm text-[var(--text-muted)] font-semibold uppercase block">June 2020 — Oct 2022</span>
+                            <h3 class="text-xl font-bold group-hover:text-blue-500 transition-colors">Project Manager at Bay Club</h3>
+                        </div>
+                        <svg class="chevron w-5 h-5 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    
+                    <div class="content-wrapper overflow-hidden">
+                        <div class="min-h-0 pt-2 pb-4">
+                            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                                <div class="md:col-span-3">
+                                    <p class="text-[var(--text-muted)]">
+                                        Drove data-driven decisions and shared membership product launch through collaborations between makreting and technolgy for our 80,000 members across 26 campuses.
+                                    </p>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <div class="aspect-video bg-[var(--border)] rounded-lg overflow-hidden photo-frame border border-[var(--border)]">
+                                        <img src="assets/TBCC.jpg" alt="Project Management" class="object-cover w-full h-full">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Earlier Experience -->
+                <div class="relative pl-8 timeline-item group cursor-pointer" onclick="toggleItem(this)">
+                    <div class="active-dot"></div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="mono text-sm text-[var(--text-muted)] font-semibold uppercase block">Early Career</span>
+                            <h3 class="text-xl font-bold group-hover:text-blue-500 transition-colors">Analyst Roles</h3>
+                        </div>
+                        <svg class="chevron w-5 h-5 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    
+                    <div class="content-wrapper overflow-hidden">
+                        <div class="min-h-0 pt-2 pb-4">
+                            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                                <div class="md:col-span-3">
+                                    <p class="text-[var(--text-muted)]">
+                                        Previous experience includes analyst positions at Angeles Investments and Artemis Connection, focusing on quantitative research and strategic support.
+                                    </p>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <div class="aspect-video bg-[var(--border)] rounded-lg overflow-hidden photo-frame border border-[var(--border)]">
+                                        <img src="assets/Analyst.jpg" alt="Data Analysis" class="object-cover w-full h-full">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies & Interests Section -->
+        <section id="hobbies" class="mb-24">
+            <h2 class="mono text-xs uppercase tracking-[0.2em] text-[var(--text-muted)] mb-8 border-b border-[var(--border)] pb-2">
+                Hobbies & Interests
+            </h2>
+            
+            <div class="grid grid-cols-1 gap-8 mb-8">
+                <div class="space-y-4">
+                    <p class="text-[var(--text-muted)]">
+                        Outside of the office, you'll usually find me outside. Whether it's running in the Marina, swimming laps at Gateway or Aquatic Park, or cycling across the bridge, I find my best ideas come when I'm moving. 
+                </div>
+                <div class="space-y-4">
+                    <p class="text-[var(--text-muted)]">
+                       When I'm not on the road or in the pool, I'm probably skiing or backpacking somewhere in the Sierra Nevada. I've hiked the Pacific Crest Trail from Mexico to Canada, became an Eagle Scount and continue to volunteer at my church and at the polls
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="aspect-square bg-[var(--border)] rounded-lg overflow-hidden photo-frame relative group">
+                        <img 
+                            src="assets/HalfIM.JPG" 
+                            alt="Running a Half Ironman in Utah" 
+                            class="object-cover w-full h-full"
+                        >
+                    </div>
+                    <div class="aspect-square bg-[var(--border)] rounded-lg overflow-hidden photo-frame relative group">
+                        <img 
+                            src="assets/Whitney.jpg" 
+                            alt="Hiking Mt. Whhitney" 
+                            class="object-cover w-full h-full"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="mb-24">
+            <h2 class="mono text-xs uppercase tracking-[0.2em] text-[var(--text-muted)] mb-6 border-b border-[var(--border)] pb-2">
+                Education
+            </h2>
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                <h3 class="font-bold text-lg">Claremont McKenna College</h3>
+                <span class="mono text-[10px] text-[var(--text-muted)] uppercase tracking-widest">Mathematics &bull; Economics &bull; Computer Science</span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <footer id="contact" class="pt-12 border-t border-[var(--border)]">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">Get in touch.</h2>
+                </div>
+                <div class="flex flex-wrap gap-4 mono text-sm">
+                    <a href="mailto:luke@lenhart.one" class="px-4 py-2 bg-[var(--text-main)] text-[var(--bg-color)] rounded-full hover:opacity-90 transition-opacity">Email me</a>
+                    <a href="https://www.linkedin.com/in/lukelenhart/" class="px-4 py-2 border border-[var(--border)] rounded-full hover:bg-[var(--border)] transition-colors">LinkedIn</a>
+                </div>
+            </div>
+            <p class="mt-20 text-[10px] mono text-[var(--text-muted)] uppercase tracking-widest text-center">
+                born and raised in California &copy; 2026
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        function toggleItem(element) {
+            element.classList.toggle('expanded');
+        }
+
+        const sections = document.querySelectorAll('section, header');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-500');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('text-blue-500');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
